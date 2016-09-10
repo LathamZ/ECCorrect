@@ -2,10 +2,17 @@
 # -*- coding: utf-8 -*-
 
 import chardet
+import sys
+import os
+
+sys.path.insert(0, '..')
+from ECCorrect import shell
 
 if __name__ == '__main__':
+    config = shell.getConfig()
+
     # get filepath
-    filepath = raw_input('-->')
+    filepath = config.filepath
 
     # Read file content
     with open(filepath, 'r') as f:
