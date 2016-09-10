@@ -28,5 +28,8 @@ setup(
     entry_points="""
         [console_scripts]
         eccorrect = eccorrect.main:main
-    """
+    """,
+    install_requires=[
+        'chardet',
+        ]
     )

@@ -12,7 +12,7 @@ def main():
     config = shell.getConfig()
 
     # get filepath
-    filepath = config.filepath
+    filepath = config['filepath']
 
     # Read file content
     with open(filepath, 'r') as f:

@@ -5,9 +5,7 @@ A python software which can detect &amp; correct the encoding of your file. Powe
 
 ## Install
 
-### Prerequisites
 
-* [Chardet](https://github.com/chardet/chardet) required.
 
 In the project directory.
 
