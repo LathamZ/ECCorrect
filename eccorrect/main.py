@@ -6,9 +6,9 @@ import sys
 import os
 
 sys.path.insert(0, '..')
-from ECCorrect import shell
+from eccorrect import shell
 
-if __name__ == '__main__':
+def main():
     config = shell.getConfig()
 
     # get filepath
@@ -30,6 +30,8 @@ if __name__ == '__main__':
         f.write(data)
 
 
+if __name__ == '__main__':
+    main()
 
 
 
