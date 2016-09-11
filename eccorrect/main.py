@@ -18,8 +18,12 @@ def main():
     # Preview
     content.previewfile()
 
-    # Write back
-    content.safewrite()
+    # Confirm
+    if shell.confirm():
+        # Write back
+        content.safewrite()
+    else:
+        sys.exit(0)
 
 if __name__ == '__main__':
 	main()
