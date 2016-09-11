@@ -6,32 +6,20 @@ import sys
 import os
 
 sys.path.insert(0, '..')
-from eccorrect import shell
+from eccorrect import shell, data
 
 def main():
     config = shell.getConfig()
 
     # get filepath
     filepath = config['filepath']
+    content = data.Data(filepath)
 
-    # Read file content
-    with open(filepath, 'r') as f:
-        data = f.read()
-        print data
-        res = chardet.detect(data)
-        print res
-        encoding = res['encoding']
+    # Preview
+    content.previewfile()
 
     # Write back
-    with open(filepath, 'w') as f:
-        data = data.decode(encoding)
-        print data
-        data = data.encode('utf-8')
-        f.write(data)
-
+    content.safewrite()
 
 if __name__ == '__main__':
-    main()
-
-
-
+	main()
