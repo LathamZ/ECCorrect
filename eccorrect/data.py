@@ -25,7 +25,7 @@ class Data(object):
         count = 0
         length = 0
         with open(self.filepath, 'r') as f:
-            print("===File Preview: (Encoding:%s, Confidence:%s)" % \
+            print("===File Preview: (Encoding:%s, Confidence:%s)===\n" % \
                     (encoding, confidence))
             line = f.readline()
             while(line and count < numOfLines and length < \
@@ -34,7 +34,7 @@ class Data(object):
                 count += 1
                 length += len(line)
                 line = f.readline()
-            print('\n===Preview end.')
+            print('\n===Preview end.===')
 
 
     def write(self, filepath=None):
