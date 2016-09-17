@@ -5,7 +5,7 @@ The current routine of this software is:
 
 1. Detect the encoding of your file.
 2. Decode the file using the encoding detected.
-3. Encode the content with preferred encoding(which you can set in conf.yaml) and save to the file.
+3. Encode the content with preferred encoding(See how to config below) and save to the file.
 
 
 ## Install
