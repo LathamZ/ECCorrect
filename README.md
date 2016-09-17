@@ -30,7 +30,9 @@ You could specify your settings in `conf.yaml` file.
 
 Following are currently supported fields:
 
-* preferred_encdoing (default to utf8 if not setting)
+* preferred_encdoing (default to utf8 if not set)
+
+The `conf.yaml` file must exist even if nothing to be specified. 
 	
 ## License
 [MIT License](https://github.com/LathamZ/ECCorrect/blob/master/LICENSE)
