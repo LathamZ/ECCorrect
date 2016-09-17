@@ -26,13 +26,14 @@ if you encountered permission problem, use sudo.
 	
 ## Config
 
-You could specify your settings in `conf.yaml` file.
+You could specify your settings in `.eccorrect.yaml` file.
 
 Following are currently supported fields:
 
 * preferred_encoding (default to utf8 if not set)
 
-The `conf.yaml` is located in your HOME directory.	
+The `.eccorrect.yaml` is located in your HOME directory.	
+
 ## License
 [MIT License](https://github.com/LathamZ/ECCorrect/blob/master/LICENSE)
 
