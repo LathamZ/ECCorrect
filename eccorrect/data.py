@@ -89,7 +89,10 @@ class Data(object):
         try:
             with open(self.filepath, 'r') as f:
                 data = f.read()
-            self._target_encoding = dict(self._config)\
+            if not self._config:
+                self._target_encoding = 'utf8'
+            else:
+                self._target_encoding = dict(self._config)\
                     .get('preferred_encoding', 'utf8')
             data = data.decode(self._original_encoding)
             data = data.encode(self._target_encoding)

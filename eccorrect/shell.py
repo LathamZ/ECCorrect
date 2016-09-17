@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+from os.path import expanduser
 import argparse
 import yaml
 
@@ -22,12 +22,18 @@ def confirm():
 def readYamlConfig():
     """Read settings from YAML file."""
 
-    path = './conf.yaml'
+    home = expanduser("~")
+    path = home + '/.eccorrect.yaml'
     try:
         with open(path, 'r') as f:
             data = f.read()
             return yaml.load(data)
     except IOError as e:
-        print("[!]Couldn't find conf.yaml file. Program exited.")
-        exit(-1)
+        print("[!]Couldn't find conf.yaml file.")
+        print("[!]Creating conf.yaml at %s" % path)
+        with open(path, 'w') as f:
+            f.write("# Config ECCorrect in this file.\n")
+        with open(path, 'r') as f:
+            data = f.read()
+        return yaml.load(data)
 
