@@ -32,8 +32,7 @@ Following are currently supported fields:
 
 * preferred_encoding (default to utf8 if not set)
 
-The `conf.yaml` file must exist even if nothing to be specified. 
-	
+The `conf.yaml` is located in your HOME directory.	
 ## License
 [MIT License](https://github.com/LathamZ/ECCorrect/blob/master/LICENSE)
 
