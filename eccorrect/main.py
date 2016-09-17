@@ -9,7 +9,7 @@ sys.path.insert(0, '..')
 from eccorrect import shell, data
 
 def main():
-    config = shell.getConfig()
+    config = shell.getShellConfig()
 
     # get filepath
     filepath = config['filepath']

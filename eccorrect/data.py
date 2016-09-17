@@ -3,6 +3,7 @@
 
 from __future__ import print_function
 from chardet.universaldetector import UniversalDetector
+from eccorrect import shell
 
 import os
 
@@ -11,9 +12,9 @@ class Data(object):
         self.filepath = filepath
         self.pathType = None
         self._original_encoding = None
-        self._target_encoding = 'utf8'
         self._confidence = None
         self._force = None
+        self._config = shell.readYamlConfig()
 
     def previewfile(self, numOfLines=10, lengthOfCharaters=100):
         """Preview a limit of lines of the file."""
@@ -87,6 +88,6 @@ class Data(object):
         with open(self.filepath, 'r') as f:
             data = f.read()
         data = data.decode(self._original_encoding)
-        data = data.encode(self._target_encoding)
+        data = data.encode(self._config['preferred_encoding'])
         return data
 
