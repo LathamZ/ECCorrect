@@ -23,7 +23,11 @@ def readYamlConfig():
     """Read settings from YAML file."""
 
     path = './conf.yaml'
-    with open(path, 'r') as f:
-        data = f.read()
-        return yaml.load(data)
+    try:
+        with open(path, 'r') as f:
+            data = f.read()
+            return yaml.load(data)
+    except IOError as e:
+        print("[!]Couldn't find conf.yaml file. Program exited.")
+        exit(-1)
 

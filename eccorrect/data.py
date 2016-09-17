@@ -12,6 +12,7 @@ class Data(object):
         self.filepath = filepath
         self.pathType = None
         self._original_encoding = None
+        self._target_encoding = None
         self._confidence = None
         self._force = None
         self._config = shell.readYamlConfig()
@@ -85,9 +86,14 @@ class Data(object):
     def _preparedata(self):
         """Decode & encode the data of file"""
 
-        with open(self.filepath, 'r') as f:
-            data = f.read()
-        data = data.decode(self._original_encoding)
-        data = data.encode(self._config['preferred_encoding'])
+        try:
+            with open(self.filepath, 'r') as f:
+                data = f.read()
+            self._target_encoding = dict(self._config)\
+                    .get('preferred_encoding', 'utf8')
+            data = data.decode(self._original_encoding)
+            data = data.encode(self._target_encoding)
+        except LookupError as e:
+            print("[!]Wrong encoding specified in conf.yaml")
         return data
 
