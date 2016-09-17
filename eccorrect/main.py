@@ -9,10 +9,10 @@ sys.path.insert(0, '..')
 from eccorrect import shell, data
 
 def main():
-    config = shell.getShellConfig()
+    cmds = shell.getShellCommands()
 
     # get filepath
-    filepath = config['filepath']
+    filepath = cmds['filepath']
     content = data.Data(filepath)
 
     # Preview

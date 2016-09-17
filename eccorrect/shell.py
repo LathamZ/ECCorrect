@@ -4,7 +4,7 @@ from os.path import expanduser
 import argparse
 import yaml
 
-def getShellConfig():
+def getShellCommands():
     """Get the command line arguments. Return a dict. """
 
     parser = argparse.ArgumentParser(description='Welcome to use ECCorrect.')
@@ -19,7 +19,7 @@ def confirm():
         if input in ['y', 'Y']: return True
         elif input in ['n', 'N']: return False
 
-def readYamlConfig():
+def readSettings():
     """Read settings from YAML file."""
 
     home = expanduser("~")

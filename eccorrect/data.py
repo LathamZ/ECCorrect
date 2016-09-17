@@ -15,7 +15,7 @@ class Data(object):
         self._target_encoding = None
         self._confidence = None
         self._force = None
-        self._config = shell.readYamlConfig()
+        self._config = shell.readSettings()
 
     def previewfile(self, numOfLines=10, lengthOfCharaters=100):
         """Preview a limit of lines of the file."""
