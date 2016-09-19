@@ -11,6 +11,10 @@ from eccorrect import shell, data
 def main():
     cmds = shell.getShellCommands()
 
+    # Check settings
+
+    shell.checkSettings()
+
     # get filepath
     filepath = cmds['filepath']
     content = data.Data(filepath)

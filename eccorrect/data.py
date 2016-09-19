@@ -92,17 +92,14 @@ class Data(object):
     def _preparedata(self):
         """Decode & encode the data of file"""
 
-        try:
-            with open(self.filepath, 'r') as f:
-                data = f.read()
-            if not self._config:
-                self._target_encoding = 'utf8'
-            else:
-                self._target_encoding = dict(self._config)\
-                    .get('preferred_encoding', 'utf8')
-            data = data.decode(self._original_encoding)
-            data = data.encode(self._target_encoding)
-        except LookupError as e:
-            print("[!]Wrong encoding specified in conf.yaml")
+        with open(self.filepath, 'r') as f:
+            data = f.read()
+        if not self._config:
+            self._target_encoding = 'utf8'
+        else:
+            self._target_encoding = dict(self._config)\
+                .get('preferred_encoding', 'utf8')
+        data = data.decode(self._original_encoding)
+        data = data.encode(self._target_encoding)
         return data
 
