@@ -64,6 +64,12 @@ class Data(object):
         os.remove(self.filepath)
         os.rename(tmp_path, self.filepath)
 
+    def copywrite(self):
+        """Write the encoded data back to as a copy."""
+
+        tmp_path = self.filepath + '.tmp'
+        self.write(filepath=tmp_path)
+
 
     def setencoding(self, encoding):
         """Set the current encoding manually."""

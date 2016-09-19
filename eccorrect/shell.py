@@ -9,6 +9,7 @@ def getShellCommands():
 
     parser = argparse.ArgumentParser(description='Welcome to use ECCorrect.')
     parser.add_argument('filepath', help='The file path.')
+    parser.add_argument('-c', '--copy', action='count', help='Save encoded file as a copy.')
     return vars(parser.parse_args())
 
 def confirm():

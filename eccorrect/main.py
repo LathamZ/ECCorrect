@@ -15,15 +15,19 @@ def main():
     filepath = cmds['filepath']
     content = data.Data(filepath)
 
-    # Preview
-    content.previewfile()
-
-    # Confirm
-    if shell.confirm():
-        # Write back
-        content.safewrite()
+    # Save as copy
+    if cmds['copy'] > 0:
+        content.copywrite()
+    # Save to original file
     else:
-        sys.exit(0)
+        # Preview
+        content.previewfile()
+        # Confirm
+        if shell.confirm():
+            # Write back
+            content.safewrite()
+        else:
+            sys.exit(0)
 
 if __name__ == '__main__':
     main()
