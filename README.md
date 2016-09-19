@@ -8,7 +8,7 @@ The current routine of this software is:
 3. Encode the content with preferred encoding(See how to config below) and save to the file.
 
 
-## Install
+## Installation
 
 
 
@@ -24,16 +24,20 @@ if you encountered permission problem, use sudo.
 
 	$ eccorrect filename
 	
-## Config
+## Configuration
+
+[YAML](http://yaml.org/) Supported.
 
 You could specify your settings in `.eccorrect.yaml` file.
 
 Following are currently supported fields:
 
 * preferred_encoding (default to utf8 if not set)
+* ...
 
-The `.eccorrect.yaml` is located in your HOME directory.	
+The configuration file is located in your HOME directory `~/.eccorrect.yaml`.
+
 
 ## License
-[MIT License](https://github.com/LathamZ/ECCorrect/blob/master/LICENSE)
+[MIT](https://github.com/LathamZ/ECCorrect/blob/master/LICENSE)
 
