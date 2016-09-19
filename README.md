@@ -23,6 +23,10 @@ if you encountered permission problem, use sudo.
 ## Usage
 
 	$ eccorrect filename
+
+for details:
+
+    $ eccorrect -h
 	
 ## Configuration
 
