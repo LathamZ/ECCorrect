@@ -5,7 +5,7 @@ from __future__ import print_function
 from chardet.universaldetector import UniversalDetector
 from eccorrect import shell
 
-import os
+import os, sys
 
 class Data(object):
     def __init__(self, filepath):
@@ -23,6 +23,8 @@ class Data(object):
         if not self._original_encoding:
             self._detectfileencoding()
         encoding = self._original_encoding
+        if encoding == None:
+            sys.exit("Encoding detecting failed.")
         confidence = self._confidence
         count = 0
         length = 0
