@@ -101,7 +101,7 @@ class Data(object):
         else:
             self._target_encoding = dict(self._config)\
                 .get('preferred_encoding', 'utf8')
-        data = data.decode(self._original_encoding)
-        data = data.encode(self._target_encoding)
+        data = data.decode(self._original_encoding, 'ignore')
+        data = data.encode(self._target_encoding, 'ignore')
         return data
 
